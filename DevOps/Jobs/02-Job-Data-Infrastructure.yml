@@ -20,7 +20,7 @@ jobs:
       deploy:
         steps:
 
-        - template: ../Tasks/Task-Terraform.yml
+        - template: ../Tasks/03-Task-Terraform.yml
           parameters:
             ServiceConnection: ${{ parameters.ServiceConnection }}
             ResourceGroupName: ${{ variables.ResourceGroupNameData }}
