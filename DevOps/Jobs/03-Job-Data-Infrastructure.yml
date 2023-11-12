@@ -2,10 +2,6 @@ parameters:
   Environment: string
   Location: String
   ServiceConnection: String
-  sqlServerPasswordDA: String
-  clintazrealsecret: string
-  clintazrealappid: string
-  FeatureFlag_ADF_DeployPipelines: boolean
 
 jobs: 
 - deployment: JobDataInfrastructure
@@ -13,7 +9,7 @@ jobs:
   dependsOn: []
   variables:
     - template: ..\Variables\Variables-${{ Parameters.Environment }}.yml
-    #- group: ${{ Parameters.Environment }}-vars
+    - group: ${{ Parameters.Environment }}-vars
   environment: ${{ variables.AdoEnvironment }}
   strategy:
     runOnce:
@@ -27,4 +23,5 @@ jobs:
             Environment:  ${{ parameters.Environment }}
             SubscripIdTerra: ${{variables.SubscriptionIdData}}
             Location: ${{ parameters.Location }}
+            TenantID: $ {{ variables.tenant-id-secret }}
 

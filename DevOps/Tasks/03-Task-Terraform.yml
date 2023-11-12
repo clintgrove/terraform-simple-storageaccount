@@ -3,6 +3,7 @@ parameters:
  - name: ResourceGroupName
  - name: Environment
  - name: Location
+ - name: TenantID
  - name: SubscripIdTerra
 
 steps:
@@ -26,7 +27,7 @@ steps:
     workingDirectory: ././Infrastructure/TerraformSimple
     command: plan
     environmentServiceNameAzureRM:  ${{ parameters.ServiceConnection }}
-    commandOptions: '-out=terraform.tfstate -var resourcegroup=${{ parameters.ResourceGroupName }} -var envvar=${{ parameters.Environment }}'
+    commandOptions: '-out=terraform.tfstate -var resourcegroup=${{ parameters.ResourceGroupName }} -var envvar=${{ parameters.Environment }} -var tenant_id=${{ parameters.TenantID }} -var location=${{parameters.Location}}'
 
 - task: TerraformTaskV2@2
   displayName: 'Terraform : Validate and Apply'
@@ -34,4 +35,4 @@ steps:
     command: apply
     environmentServiceNameAzureRM:  ${{ parameters.ServiceConnection }}
     workingDirectory: ././Infrastructure/TerraformSimple
-    commandOptions: '-var resourcegroup=${{ parameters.ResourceGroupName }} -var subscription_id=${{ parameters.SubscripIdTerra }} -var envvar=${{ parameters.Environment }} -var location=${{parameters.Location}}'
+    commandOptions: '-var resourcegroup=${{ parameters.ResourceGroupName }} -var tenant_id=${{ parameters.TenantID }} -var subscription_id=${{ parameters.SubscripIdTerra }} -var envvar=${{ parameters.Environment }} -var location=${{parameters.Location}}'
