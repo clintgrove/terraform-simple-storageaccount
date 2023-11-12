@@ -16,6 +16,6 @@ jobs:
         steps:
         - checkout: self
         
-        - template: ..\Tasks\Task-PublishArmTemplates.yml
+        - template: ..\Tasks\02-Task-PublishArmTemplates.yml
           parameters:
             ArmTemplatesPath: "$(System.DefaultWorkingDirectory)/Infrastructure/"

@@ -17,7 +17,7 @@ stages:
         Location: ${{ parameters.Location }}
         ServiceConnection: ${{ parameters.ServiceConnection }}
 
-    - template: ..\Jobs\02-Job-Data-Infrastructure.yml
+    - template: ..\Jobs\03-Job-Data-Infrastructure.yml
       parameters:
         Environment: ${{ parameters.Environment }}  
         Location: ${{ parameters.Location }}
