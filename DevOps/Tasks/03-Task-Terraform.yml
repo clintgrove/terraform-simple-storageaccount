@@ -13,12 +13,12 @@ steps:
   displayName: Install Terraform latest
 #- script: echo This is the resource group that has been passed in ${{ parameters.ResourceGroupName }} and service connection is  ${{ parameters.ServiceConnection }}
 # this powershell login is needed if you want to use the data external me in the main.tf
-- powershell: 'az login                                                
-              --service-principal                                        
-              -u ${{ parameters.clintazrealappid }}    
-              -p ${{ parameters.clintazrealsecret }}                 
-              --tenant "16b3c013-d300-468d-ac64-7eda0820b6d3"'
-  displayName: 'Azure Service Principal Login'
+# - powershell: 'az login                                                
+#               --service-principal                                        
+#               -u ${{ parameters.clintazrealappid }}    
+#               -p ${{ parameters.clintazrealsecret }}                 
+#               --tenant "16b3c013-d300-468d-ac64-7eda0820b6d3"'
+#   displayName: 'Azure Service Principal Login'
 - task: TerraformTaskV2@2
   displayName: 'Terraform : Init'
   inputs:
