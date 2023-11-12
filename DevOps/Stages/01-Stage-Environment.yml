@@ -11,12 +11,6 @@ stages:
     - template: ..\Variables\Variables-Global.yml
   jobs:  
 
-    - template: ..\Jobs\02-Job-Global-Build.yml
-      parameters: 
-        Environment: ${{ parameters.Environment }}  
-        Location: ${{ parameters.Location }}
-        ServiceConnection: ${{ parameters.ServiceConnection }}
-
     - template: ..\Jobs\03-Job-Data-Infrastructure.yml
       parameters:
         Environment: ${{ parameters.Environment }}  

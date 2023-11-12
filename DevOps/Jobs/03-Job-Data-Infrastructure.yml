@@ -10,10 +10,10 @@ parameters:
 jobs: 
 - deployment: JobDataInfrastructure
   displayName: Job - Data Infrastructure
-  dependsOn: JobGlobalBuild
+  dependsOn: []
   variables:
     - template: ..\Variables\Variables-${{ Parameters.Environment }}.yml
-    - group: ${{ Parameters.Environment }}-vars
+    #- group: ${{ Parameters.Environment }}-vars
   environment: ${{ variables.AdoEnvironment }}
   strategy:
     runOnce:
@@ -27,5 +27,4 @@ jobs:
             Environment:  ${{ parameters.Environment }}
             SubscripIdTerra: ${{variables.SubscriptionIdData}}
             Location: ${{ parameters.Location }}
-            clintazrealappid: $(clintazreal-appid)
-            clintazrealsecret: $(clintazreal-secret)
+

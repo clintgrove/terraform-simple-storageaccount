@@ -2,8 +2,6 @@ parameters:
  - name: ServiceConnection
  - name: ResourceGroupName
  - name: Environment
- - name: clintazrealsecret
- - name: clintazrealappid
  - name: Location
  - name: SubscripIdTerra
 
