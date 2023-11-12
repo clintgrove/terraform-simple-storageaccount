@@ -15,13 +15,6 @@ variable "envvar" {
   default = ""
   description = "which is it test dev or ppe"
 }
-
-variable "client_id" {
-  type = string
-}
-variable "client_secret" {
-  type =  string
-}
 variable "tenant_id" {
   type = string
 }
