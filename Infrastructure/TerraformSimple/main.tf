@@ -11,6 +11,15 @@ data "azurerm_client_config" "current" {
 
 }
 
+module "avm-res-keyvault-vault" {
+  source  = "Azure/avm-res-keyvault-vault/azurerm"
+  version = "0.5.0"
+  name = "keyvaultcgr2terraf"
+  resource_group_name   = var.resourcegroup
+  location              = var.location
+  tenant_id             = var.tenant_id
+}
+
 #############################################################################
 #                               Making a Resource Group
 #############################################################################
