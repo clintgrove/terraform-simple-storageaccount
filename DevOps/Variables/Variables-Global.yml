@@ -1,0 +1,11 @@
+variables:
+  ServiceConnection: 'clintazrealallrgs'
+  DevEnvironment: 'Dev'
+  TestEnvironment: 'Test'
+  PpeEnvironment: 'Ppe'
+  ProdEnvironment: 'Prod'
+  Location: 'uksouth'
+
+
+
+  

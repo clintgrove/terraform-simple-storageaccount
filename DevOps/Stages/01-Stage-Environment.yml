@@ -1,0 +1,26 @@
+parameters:
+  Environment: String  
+  Location: String
+  ServiceConnection: String
+
+stages:
+- stage: Stage_${{ parameters.Environment }} 
+  displayName: Stage - ${{ parameters.Environment }}
+  dependsOn: []
+  variables:
+    - template: ..\Variables\Variables-Global.yml
+  jobs:  
+
+    - template: ..\Jobs\Job-Global-Build.yml
+      parameters: 
+        Environment: ${{ parameters.Environment }}  
+        Location: ${{ parameters.Location }}
+        ServiceConnection: ${{ parameters.ServiceConnection }}
+
+    - template: ..\Jobs\Job-Data-Infrastructure.yml
+      parameters:
+        Environment: ${{ parameters.Environment }}  
+        Location: ${{ parameters.Location }}
+        ServiceConnection: ${{ parameters.ServiceConnection }}
+
+

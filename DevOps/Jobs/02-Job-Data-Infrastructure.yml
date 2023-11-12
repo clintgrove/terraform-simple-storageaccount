@@ -1,0 +1,31 @@
+parameters:
+  Environment: string
+  Location: String
+  ServiceConnection: String
+  sqlServerPasswordDA: String
+  clintazrealsecret: string
+  clintazrealappid: string
+  FeatureFlag_ADF_DeployPipelines: boolean
+
+jobs: 
+- deployment: JobDataInfrastructure
+  displayName: Job - Data Infrastructure
+  dependsOn: JobGlobalBuild
+  variables:
+    - template: ..\Variables\Variables-${{ Parameters.Environment }}.yml
+    - group: ${{ Parameters.Environment }}-vars
+  environment: ${{ variables.AdoEnvironment }}
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+
+        - template: ../Tasks/Task-Terraform.yml
+          parameters:
+            ServiceConnection: ${{ parameters.ServiceConnection }}
+            ResourceGroupName: ${{ variables.ResourceGroupNameData }}
+            Environment:  ${{ parameters.Environment }}
+            SubscripIdTerra: ${{variables.SubscriptionIdData}}
+            Location: ${{ parameters.Location }}
+            clintazrealappid: $(clintazreal-appid)
+            clintazrealsecret: $(clintazreal-secret)
