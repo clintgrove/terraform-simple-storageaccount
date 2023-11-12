@@ -1,7 +1,0 @@
-parameters:
-  - name: ArmTemplatesPath
-    type: string
-
-steps:
-  - publish: ${{ parameters.ArmTemplatesPath }}
-    artifact: ArmTemplates
