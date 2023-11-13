@@ -38,13 +38,13 @@ resource "azurerm_storage_account" "this" {
 #                               Making a kEY vAULT
 #############################################################################
 
-module "avm-res-keyvault-vault" {
-  source  = "Azure/avm-res-keyvault-vault/azurerm"
-  version = "0.5.0"
-  name = "keyvaultcgr2terraf"
-  resource_group_name   = var.resourcegroup
-  location              = var.location
-  tenant_id             = var.tenant_id
-  depends_on = [ azurerm_resource_group.this ]
-}
+# module "avm-res-keyvault-vault" {
+#   source  = "Azure/avm-res-keyvault-vault/azurerm"
+#   version = "0.5.0"
+#   name = "keyvaultcgr2terraf"
+#   resource_group_name   = var.resourcegroup
+#   location              = var.location
+#   tenant_id             = var.tenant_id
+#   depends_on = [ azurerm_resource_group.this ]
+# }
 

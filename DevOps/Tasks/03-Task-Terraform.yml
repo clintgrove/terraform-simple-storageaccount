@@ -31,7 +31,6 @@ steps:
      -out=terraform.tfstate
      -var resourcegroup=${{ parameters.ResourceGroupName }}
      -var envvar=${{ parameters.Environment }}
-     -var tenant_id=${{ parameters.TenantID }}
      -var location=${{ parameters.Location }}
 
 - task: TerraformTaskV2@2
@@ -44,5 +43,6 @@ steps:
       -var resourcegroup=${{ parameters.ResourceGroupName }}
       -var tenant_id=${{ parameters.TenantID }}
       -var subscription_id=${{ parameters.SubscripIdTerra }}
-      -var envvar=${{ parameters.Environment }}
       -var location=${{parameters.Location}}
+
+#      -var envvar=${{ parameters.Environment }}
