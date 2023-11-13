@@ -11,6 +11,9 @@ steps:
 - task: TerraformInstaller@0
   displayName: Install Terraform latest
 
+- script: echo parameters.TenantID
+  displayName: 'Echo TenantID'
+  
 - task: TerraformTaskV2@2
   displayName: 'Terraform : Init'
   inputs:
