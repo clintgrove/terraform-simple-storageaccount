@@ -27,7 +27,7 @@ steps:
     workingDirectory: ././Infrastructure/TerraformSimple
     command: plan
     environmentServiceNameAzureRM:  ${{ parameters.ServiceConnection }}
-    commandOptions: -var="resourcegroup=${{ parameters.ResourceGroupName }}" -var="envvar=${{ parameters.Environment }}"
+    commandOptions: -var="resourcegroup=${{ parameters.ResourceGroupName }}" -var="subscription_id=${{ parameters.SubscripIdTerra }}" -var="envvar=${{ parameters.Environment }}" -var="location=${{parameters.Location}}" -var="tenant_id=${{parameters.TenantID}}"
 
 - task: TerraformTaskV2@2
   displayName: 'Terraform : Validate and Apply'
