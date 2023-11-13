@@ -35,6 +35,4 @@ steps:
     command: apply
     environmentServiceNameAzureRM:  ${{ parameters.ServiceConnection }}
     workingDirectory: ././Infrastructure/TerraformSimple
-    commandOptions: '-var resourcegroup=${{ parameters.ResourceGroupName }} -var subscription_id=${{ parameters.SubscripIdTerra }} -var envvar=${{ parameters.Environment }} -var location=${{parameters.Location}}'
-
-#      -var envvar=${{ parameters.Environment }}
+    commandOptions: -var="resourcegroup=${{ parameters.ResourceGroupName }}" -var="subscription_id=${{ parameters.SubscripIdTerra }}" -var="envvar=${{ parameters.Environment }}" -var="location=${{parameters.Location}}" -var="tenant_id=${{parameters.TenantID}}"
