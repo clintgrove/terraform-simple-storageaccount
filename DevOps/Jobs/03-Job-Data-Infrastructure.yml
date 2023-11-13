@@ -23,8 +23,5 @@ jobs:
             Environment:  ${{ parameters.Environment }}
             SubscripIdTerra: ${{variables.SubscriptionIdData}}
             Location: ${{ parameters.Location }}
-            TenantID: $ {{ variables.tenant-id-secret }}
-
-        - script: echo ${{variables.clintazreal-appid}}
-          displayName: 'Echo client_id'
+            TenantID: $(tenant-id-secret)
 
