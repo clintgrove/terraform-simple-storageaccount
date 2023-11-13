@@ -25,3 +25,6 @@ jobs:
             Location: ${{ parameters.Location }}
             TenantID: $ {{ variables.tenant-id-secret }}
 
+        - script: echo ${{variables.clintazreal-appid}}
+          displayName: 'Echo client_id'
+

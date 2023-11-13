@@ -11,7 +11,7 @@ steps:
 - task: TerraformInstaller@0
   displayName: Install Terraform latest
 
-- script: echo ${{parameters.TenantID}}
+- script: echo ${{parameters.TenantID}} 
   displayName: 'Echo TenantID'
 
 - task: TerraformTaskV2@2
